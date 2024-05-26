@@ -102,14 +102,70 @@ function sumOfN(n) {
     return sequence;
 }
 // Harder because I havent done a whole lot with loops yet
-function allNines(x) {
-    x = BigInt(x); // Ensure x is treated as a BigInt
-    let num = 0n;
-    let m = 0n;
+// function allNines(x) {
+//     x = BigInt(x); // Ensure x is treated as a BigInt
+//     let num = 0n;
+//     let m = 0n;
 
-    while (true) {
-        m++;
-        num = num * 10n + 9n; // Build the number consisting of m '9's
-        if (num % x === 0n) {
-            return m;
-// Unable to Solve
+//     while (true) {
+//         m++;
+//         num = num * 10n + 9n; // Build the number consisting of m '9's
+//         if (num % x === 0n) {
+//             return m;
+// // Unable to Solve
+// // Given a non-negative integer, 3 for example, 
+// return a string with a murmur: "1 sheep...2 sheep...3 sheep...". I
+// nput will always be valid, i.e. no negative integers.
+
+
+var countSheep = function (num) {
+    let result = '';
+    for (let i = 1; i <= num; i++) {
+        result += `${i} sheep...`;
+    }
+    return result;
+}
+// Took about 3 minutes to solve  
+// Create a function which translates a given DNA string into RNA.
+
+// For example:
+
+// "GCAT"  =>  "GCAU"
+function DNAtoRNA(dna) {
+    return dna.replace(/T/g, 'U')
+    // create a function which returns an RNA sequence from the given DNA sequence
+}
+// Use the Replace Method 
+
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+// Example:
+// n= 5, m=5: 25
+// n=-5, m=5:  0
+function paperwork(n, m) {
+    if (n < 0 || m < 0) {
+        return 0;
+    }
+
+    return n * m
+}
+// 3 minutes. I forgot to return the else value in the conditional    
+
+function sortByValueAndIndex(array) {
+    // New array with objects that include the original value and the product of value and index
+    let indexedArray = array.map((value, index) => {
+        return {
+            value: value,
+            product: value * (index + 1)
+        };
+    });
+
+    // Sort the array based on the product
+    indexedArray.sort((a, b) => a.product - b.product);
+
+    // Will return the sorted values
+    return indexedArray.map(item => item.value);
+}
+// Was difficult around 7-8 minutes
